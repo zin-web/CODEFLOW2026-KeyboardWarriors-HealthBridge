@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+.navbar {
+    width: 240px;
+    background-color: #0f3d59;
+    padding: 20px;
+}
+
+.navbar h2 {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.navbar a {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 12px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+.heading_of_contents{
+    padding:10px;
+
+}
+.content {
+    flex: 1;
+    background-color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    background-color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.header input {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+.workspace {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    flex: 1;
+}
+
+.left-section {
+    flex: 3;
+}
+
+.right-section {
+    flex: 1;
+}
+
+#map-box {
+    background-color: #ccebe6;
+    border: 1px solid #b2dfdb;
+    border-radius: 10px;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.stat-row {
+    display: flex;
+    gap: 15px;
+}
+
+.card {
+    flex: 1;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.card h5 { color: #64748b; margin-bottom: 5px; }
+.card p { font-size: 22px; font-weight: bold; }
+.card-blue { border-left: 4px solid #3b82f6; }
+.card-green { border-left: 4px solid #10b981; }
+.card-red { border-left: 4px solid #ef4444; }
+.card-cyan { border-left: 4px solid #06b6d4; }
+
+.event-box {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.empty-msg {
+    flex: 1;
+    color: #94a3b8;
+    text-align: center;
+    padding-top: 50px;
+    font-style: italic;
+}
+
+.event-box button {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    cursor: pointer;
+}

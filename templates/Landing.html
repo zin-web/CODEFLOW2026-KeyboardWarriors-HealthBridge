@@ -20,9 +20,45 @@ body{
   height:82vh;
 }
 
-.navbar{
+/* .navbar{
   width:90%;
   height:60px;
+} */
+
+.navbar{
+  width: 90%;
+  height: 60px;
+
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0 30px;
+}
+
+.nav-links{
+  display: flex;
+  gap: 45px;
+}
+
+.nav-links a{
+  text-decoration: none;
+  color: #111;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s;
+}
+
+.nav-links a:hover{
+  color: #4f46e5;
 }
 
 .hero{
@@ -39,6 +75,11 @@ body{
   <div class="main-container">
 
     <nav class="navbar">
+        <div class="nav-links">
+      <a href="landing.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="support.html">Contact</a>
+  </div>
 
     </nav>
 

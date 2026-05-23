@@ -20,8 +20,8 @@ def get_resources():
 def add_resource():
     """Saves a new health resource when a user clicks the interface"""
     data = request.get_json() or {}
+
     
-    # Validation checking against your required data shape
     required_fields = ['title', 'type', 'lat', 'lng']
     if not all(field in data for field in required_fields):
         return jsonify({'error': 'Missing required fields'}), 400

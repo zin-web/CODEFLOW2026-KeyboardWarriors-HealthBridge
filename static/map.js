@@ -12,12 +12,13 @@ function updateDashboardStats(resources) {
 
     resources.forEach(resource => {
         const title = resource.title.toLowerCase();
+        const rType = resource.type || resource.resource_type || "";
         
-        if (title.includes('camp') || resource.resource_type === 'camp') {
+        if (title.includes('camp') || rType === 'camp') {
             camps++;
-        } else if (title.includes('alert') || title.includes('emergency')) {
+        } else if (title.includes('alert') || title.includes('emergency') || rType === 'alert') {
             alerts++;
-        } else if (title.includes('drive') || title.includes('donation')) {
+        } else if (title.includes('drive') || title.includes('donation') || rType === 'drive') {
             drives++;
         }
     });
@@ -32,12 +33,22 @@ function loadSavedResources() {
     fetch('/api/resources')
         .then(response => response.json())
         .then(resources => {
+            map.eachLayer(layer => {
+                if (layer instanceof L.Marker) {
+                    map.removeLayer(layer);
+                }
+            });
+
             resources.forEach(resource => {
                 L.marker([resource.lat, resource.lng])
                     .addTo(map)
                     .bindPopup(`<b>${resource.title}</b><br>${resource.description}`);
             });
+
+     
             updateDashboardStats(resources);
+            const newestFirst = [...resources].reverse();
+            updateRecentEventsFeed(newestFirst);
         })
         .catch(error => console.error('Error loading map pins:', error));
 }
@@ -80,14 +91,57 @@ map.on('click', function(e) {
         return response.json();
     })
     .then(newResource => {
-       
-        L.marker([clickLat, clickLng])
-            .addTo(map)
-            .bindPopup(`<b>${title}</b><br>${description}`)
-            .openPopup();
-        
+
+
         console.log('Successfully saved to database:', newResource);
+       
         loadSavedResources(); 
     })
     .catch(error => console.error('Error saving pin:', error));
 });
+
+//recent feed upload logic 
+function updateRecentEventsFeed(resources) {
+    const feedContainer = document.getElementById('recent-events-feed');
+    if (!feedContainer) return;
+
+    feedContainer.innerHTML = '';
+
+    if (resources.length === 0) {
+        feedContainer.innerHTML = '<p class="empty-feed-text" style="color:#aaa; text-align:center; padding-top:20px;">[ No health events logged yet ]</p>';
+        return;
+    }
+
+    const recentEvents = resources.slice(0, 4);
+
+    recentEvents.forEach(event => {
+        const eventCard = document.createElement('div');
+        
+        let emoji = '📍';
+        let borderColor = '#007bff'; 
+        
+        const eType = event.type || event.resource_type || "";
+
+        if (eType === 'camp') {
+            emoji = '⛺ Health Camp';
+            borderColor = '#28a745'; 
+        } else if (eType === 'alert') {
+            emoji = '⚠️ Emergency Alert';
+            borderColor = '#dc3545'; 
+        } else if (eType === 'drive') {
+            emoji = '🩸 Donation Drive';
+            borderColor = '#ffc107'; 
+        }
+
+        eventCard.innerHTML = `
+            <div style="margin-bottom: 12px; padding: 12px; border-left: 5px solid ${borderColor}; background: #fdfdfd; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #888; font-weight: bold; margin-bottom: 4px;">
+                    ${emoji}
+                </div>
+                <strong style="font-size: 15px; color: #333; display: block; margin-bottom: 2px;">${event.title}</strong>
+                <p style="margin: 0; font-size: 13px; color: #666; line-height: 1.4;">${event.description || 'No description provided.'}</p>
+            </div>
+        `;
+        feedContainer.appendChild(eventCard);
+    });
+}

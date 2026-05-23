@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="HealthBridge is a healthcare platform that helps users access medical support, health information, and emergency services.">
-  <meta name="keywords" content="healthcare, medical support, hospital, emergency, health app">
-  <meta name="author" content="Keyboard Warriors">
-  <title>HealthBridge - Landing Page</title>
+  <title>Healthcare Landing Page</title>
 
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
 
@@ -22,65 +20,87 @@
     body{
       width:100%;
       height:100vh;
+
       display:flex;
       justify-content:center;
       align-items:center;
-      overflow:hidden;
-      background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
 
-      linear-gradient(rgba(255,255,255,0.15),rgba(255,255,255,0.15)),
-      url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2070&auto=format&fit=crop')
-      center/cover no-repeat;
+      overflow:hidden;
+
+      background:linear-gradient(135deg, #e0f7fa, #e8f5e9);
     }
 
     .main-container{
       width:88%;
-      height:82vh;
+      height:84vh;
+
       border-radius:35px;
+
       position:relative;
 
-      background:rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.28);
 
-      border:1px solid rgba(255,255,255,0.25);
+      border:1px solid rgba(255,255,255,0.35);
 
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
 
       box-shadow:
-      0 8px 32px rgba(0,0,0,0.18),
-      inset 0 1px 1px rgba(255,255,255,0.2);
+      0 8px 32px rgba(0,0,0,0.10);
 
       overflow:hidden;
     }
+
     .navbar{
       width:90%;
       height:60px;
 
       position:absolute;
-      top:35px;
+      top:30px;
       left:50%;
-      transform:translateX(-50%);
 
-      border-radius:25px;
+      transform:translateX(-50%);
 
       display:flex;
       align-items:center;
       justify-content:space-between;
 
-      padding:0 30px;
+      padding:0 28px;
     }
 
-   
+    .logo{
+      width:42px;
+      height:42px;
+
+      border:none;
+      border-radius:14px;
+
+      background:linear-gradient(135deg,#00b7ff,#00d4ff);
+
+      color:white;
+
+      font-size:20px;
+      font-weight:700;
+
+      cursor:pointer;
+
+      box-shadow:
+      0 4px 16px rgba(0,183,255,0.35);
+    }
+
     .nav-links{
       display:flex;
-      gap:45px;
+      gap:42px;
     }
 
     .nav-links a{
       text-decoration:none;
-      color:#2b2b2b;
-      font-size:16px;
+
+      color:#1f2937;
+
+      font-size:15px;
       font-weight:600;
+
       transition:0.3s;
     }
 
@@ -88,249 +108,197 @@
       color:#0099ff;
     }
 
-  
-    .login-btn{
-  width:44px;
-  height:44px;
-
-  border:none;
-  border-radius:14px;
-
-  background:rgba(255,255,255,0.14);
-
-  border:1px solid rgba(255,255,255,0.18);
-
-  backdrop-filter:blur(14px);
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  cursor:pointer;
-
-  transition:0.3s;
-}
-
-
-    .hero{
+     .hero{
       width:100%;
       height:100%;
+
       display:flex;
       align-items:center;
       justify-content:space-between;
 
-      padding:140px 80px 60px 80px;
+      padding:130px 70px 60px 70px;
     }
 
+    /* LEFT */
+
     .left{
-      width:48%;
+      width:50%;
     }
 
     .left h1{
-      font-size:48px;
+      font-size:58px;
+
       line-height:1.1;
+
       color:#111827;
+
       margin-bottom:22px;
+
       font-weight:700;
     }
 
     .left p{
-      font-size:14px;
+      font-size:15px;
+
       line-height:1.9;
-      color:#444;
+
+      color:#4b5563;
+
       margin-bottom:35px;
-      max-width:700px;
+
+      max-width:650px;
     }
 
     .start-btn{
-      padding:18px 34px;
+      padding:16px 34px;
+
       border:none;
+
       border-radius:18px;
-      margin-top:-15px;
-      font-size:18px;
+
+      font-size:16px;
       font-weight:600;
 
       cursor:pointer;
 
-      background:rgba(255,255,255,0.28);
+      color:white;
 
-      backdrop-filter:blur(12px);
-
-      border:1px solid rgba(255,255,255,0.35);
-
-      box-shadow:
-      0 8px 18px rgba(0,0,0,0.08);
+      background:linear-gradient(135deg,#00b7ff,#00d4ff);
 
       transition:0.3s;
+
+      box-shadow:
+      0 6px 18px rgba(0,183,255,0.25);
     }
 
     .start-btn:hover{
       transform:translateY(-3px);
-      background:rgba(255,255,255,0.4);
     }
 
     /* RIGHT IMAGE */
 
     .right{
-      width:38%;
+      width:40%;
+
       display:flex;
-      justify-content:right;
+      justify-content:center;
       align-items:center;
     }
 
     .image-card{
-      width:350px;
-      height:350px;
+      width:370px;
+      height:430px;
 
       border-radius:35px;
 
       overflow:hidden;
 
-      background:rgba(255,255,255,0.14);
+      background:rgba(255,255,255,0.22);
 
-      border:1px solid rgba(255,255,255,0.28);
+      border:1px solid rgba(255,255,255,0.30);
 
       backdrop-filter:blur(14px);
 
       box-shadow:
-      0 10px 30px rgba(0,0,0,0.15);
+      0 10px 30px rgba(0,0,0,0.12);
     }
 
     .image-card img{
       width:100%;
       height:100%;
+
       object-fit:cover;
     }
 
-    /* BOTTOM BUTTONS */
+    /* FEATURE BUTTONS */
 
     .bottom-buttons{
       position:absolute;
+
       bottom:28px;
       left:50%;
+
       transform:translateX(-50%);
 
       display:flex;
-      gap:26px;
+      gap:22px;
     }
 
     .glass-btn{
-      padding:10px 20px;
+      padding:12px 22px;
+
       border-radius:14px;
 
-      border:1px solid rgba(255,255,255,0.3);
+      border:1px solid rgba(255,255,255,0.35);
 
-      background:rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.25);
 
       backdrop-filter:blur(12px);
 
       cursor:pointer;
 
-      font-size:16px;
+      font-size:14px;
       font-weight:600;
 
-      color:#222;
+      color:#1f2937;
 
       transition:0.3s;
 
       box-shadow:
-      0 6px 18px rgba(0,0,0,0.08);
+      0 6px 18px rgba(0,0,0,0.06);
     }
 
     .glass-btn:hover{
       transform:translateY(-4px);
-      background:rgba(255,255,255,0.35);
+
+      background:rgba(255,255,255,0.40);
     }
 
     /* RESPONSIVE */
 
-    /* for Laptop */
-@media (max-width:1200px){
+    @media(max-width:1000px){
 
-  .hero{
-    gap:40px;
-  }
+      body{
+        height:auto;
+        padding:30px 0;
+      }
 
-  .left h1{
-    font-size:50px;
-  }
+      .main-container{
+        height:auto;
+        padding-bottom:120px;
+      }
 
-  .image-card{
-    width:320px;
-    height:320px;
-  }
-}
+      .hero{
+        flex-direction:column;
+        gap:50px;
 
-/* for tablet */
-@media (max-width:900px){
+        padding:130px 30px 60px 30px;
+      }
 
-  .hero{
-    flex-direction:column;
-    text-align:center;
-  }
+      .left,
+      .right{
+        width:100%;
+      }
 
-  .left,
-  .right{
-    width:100%;
-  }
+      .left h1{
+        font-size:42px;
+      }
 
-  .left h1{
-    font-size:42px;
-  }
+      .image-card{
+        width:100%;
+        height:350px;
+      }
 
-  .image-card{
-    width:300px;
-    height:300px;
-  }
-}
+      .bottom-buttons{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
 
-/* for large mobile */
-@media (max-width:600px){
+      .nav-links{
+        display:none;
+      }
 
-  .left h1{
-    font-size:34px;
-  }
-
-  .left p{
-    font-size:15px;
-  }
-
-  .image-card{
-    width:260px;
-    height:260px;
-  }
-}
-
-/* for small mobile*/
-@media (max-width:480px){
-
-  body{
-    padding:20px;
-  }
-
-  .hero{
-    gap:30px;
-  }
-
-  .left h1{
-    font-size:28px;
-  }
-
-  .left p{
-    font-size:14px;
-  }
-
-  .start-btn{
-    padding:12px 28px;
-    font-size:14px;
-  }
-
-  .image-card{
-    width:220px;
-    height:220px;
-  }
-}
-
+    }
 
   </style>
 </head>
@@ -339,27 +307,46 @@
 
   <div class="main-container">
 
-   
 
     <nav class="navbar">
 
-      
+      <button class="logo">H</button>
 
       <div class="nav-links">
         <a href="Landing.html">Home</a>
-        <a href="index.html">Dashboard</a>
-        <a href="support.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="support.html">Contact Us</a>
       </div>
 
-    
+      <!-- LOGIN BUTTON -->
+
+      <button class="login-btn">
+
+        <svg viewBox="0 0 24 24">
+          <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+          <polyline points="10 17 15 12 10 7"/>
+          <line x1="15" y1="12" x2="3" y2="12"/>
+        </svg>
+
+      </button>
+
     </nav>
+
+    <!-- HERO SECTION -->
 
     <section class="hero">
 
       <div class="left">
 
-      <h1>Welcome to HealthBridge</h1>
-      <p>Your gateway to comprehensive healthcare support and information.</p>
+        <h1>
+          Connecting Donors, Hospitals & Lives
+        </h1>
+
+        <p>
+          Track live blood donation camps, locate nearby hospitals,
+          monitor emergency blood requests, and manage healthcare
+          support through one smart real-time platform.
+        </p>
 
         <button class="start-btn">
           Get Started
@@ -367,18 +354,31 @@
 
       </div>
 
+      <!-- RIGHT IMAGE -->
+
       <div class="right">
 
         <div class="image-card">
 
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2070&auto=format&fit=crop" alt="">
+          <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1974&auto=format&fit=crop" alt="Healthcare">
 
         </div>
 
       </div>
 
     </section>
-</div>
+
+    <!-- FEATURE BUTTONS -->
+
+    <div class="bottom-buttons">
+
+      <button class="glass-btn">Live Map</button>
+      <button class="glass-btn">Emergency Alerts</button>
+      <button class="glass-btn">Blood Banks</button>
+
+    </div>
+
+  </div>
 
 </body>
 </html>

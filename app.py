@@ -10,6 +10,19 @@ with app.app_context():
 @app.route('/')
 def home():
     return render_template('Landing.html')
+@app.route('/dashboard')
+def dashboard():
+    return render_template('index.html')
+@app.route('/dashboard')
+def index():
+    # You can pass data to your dashboard here (e.g., patient stats)
+    return render_template('dashboard.html')
+
+# Support Route
+@app.route('/support')
+def support():
+    # This route could display FAQs or a contact form
+    return render_template('support.html')
 
 @app.route('/api/resources', methods=['GET'])
 def get_resources():
@@ -21,7 +34,7 @@ def add_resource():
     """Saves a new health resource when a user clicks the interface"""
     data = request.get_json() or {}
 
-    
+
     required_fields = ['title', 'type', 'lat', 'lng']
     if not all(field in data for field in required_fields):
         return jsonify({'error': 'Missing required fields'}), 400

@@ -113,8 +113,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 40px;
-
-  /* 🌿 Modern health background */
   background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
 }
 
@@ -181,6 +179,93 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* for Laptop */
+@media (max-width:1200px){
+
+  .hero{
+    gap:40px;
+  }
+
+  .left h1{
+    font-size:50px;
+  }
+
+  .image-card{
+    width:320px;
+    height:320px;
+  }
+}
+
+/* for tablet */
+@media (max-width:900px){
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .left,
+  .right{
+    width:100%;
+  }
+
+  .left h1{
+    font-size:42px;
+  }
+
+  .image-card{
+    width:300px;
+    height:300px;
+  }
+}
+
+/* for large mobile */
+@media (max-width:600px){
+
+  .left h1{
+    font-size:34px;
+  }
+
+  .left p{
+    font-size:15px;
+  }
+
+  .image-card{
+    width:260px;
+    height:260px;
+  }
+}
+
+/* for small mobile*/
+@media (max-width:480px){
+
+  body{
+    padding:20px;
+  }
+
+  .hero{
+    gap:30px;
+  }
+
+  .left h1{
+    font-size:28px;
+  }
+
+  .left p{
+    font-size:14px;
+  }
+
+  .start-btn{
+    padding:12px 28px;
+    font-size:14px;
+  }
+
+  .image-card{
+    width:220px;
+    height:220px;
+  }
 }
 
 

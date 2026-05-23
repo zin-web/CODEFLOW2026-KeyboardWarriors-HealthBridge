@@ -105,7 +105,7 @@
 .card-red { border-left: 4px solid #ef4444; }
 .card-cyan { border-left: 4px solid #06b6d4; }
 
-.event-box {
+.recent-events-box{
     background-color: white;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
@@ -123,7 +123,7 @@
     font-style: italic;
 }
 
-.event-box button {
+.recent-events-box button {
     width: 100%;
     padding: 10px;
     background: none;

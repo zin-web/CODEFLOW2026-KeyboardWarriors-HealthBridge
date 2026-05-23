@@ -7,31 +7,30 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
 
+#home or landing page route
 @app.route('/')
 def home():
     return render_template('Landing.html')
+#dashboard route
 @app.route('/dashboard')
 def dashboard():
-    return render_template('index.html')
-@app.route('/dashboard')
-def index():
-    # You can pass data to your dashboard here (e.g., patient stats)
-    return render_template('dashboard.html')
 
+    return render_template('dashboard.html')
+    
 # Support Route
 @app.route('/support')
 def support():
-    # This route could display FAQs or a contact form
+
     return render_template('support.html')
 
 @app.route('/api/resources', methods=['GET'])
 def get_resources():
-    """Fetches all health resources to display as pins on the map"""
+
     resources = HealthResource.query.all()
     return jsonify([resource.to_dict() for resource in resources]), 200
 @app.route('/api/resources', methods=['POST'])
 def add_resource():
-    """Saves a new health resource when a user clicks the interface"""
+    
     data = request.get_json() or {}
 
 

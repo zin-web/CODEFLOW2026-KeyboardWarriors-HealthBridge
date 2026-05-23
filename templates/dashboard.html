@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HealthBridge Dashboard</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <div class="navbar">
+            <h2>HealthBridge</h2>
+            <a href="#" class="active">Dashboard</a>
+            <a href="#">Analytics</a>
+            <a href="/support">Support Page</a>
+        </div>
+
+        <div class="content">
+            
+            <div class="header">
+                <h3>Dashboard View</h3>
+                    <input type="text" placeholder="Filter health events...">
+            <div class="filter-wrapper">
+                <label for="type-filter">Filter Event Type:</label>
+                <select id="type-filter">
+                <option value="all">Show All Events</option>
+                <option value="camp">Health Camps</option>
+                <option value="drive">Donation Drives</option>
+                <option value="alert">Emergency Alerts</option>
+                </select>
+            </div>
+            </div>
+             <div>
+                <h2 class="heading_of_contents">Add Health Events</h2>
+                </div>
+            <div class="workspace">
+               
+                
+                <div class="left-section">
+                    <div id="map-box">
+                        <p>[ Leaflet Map Canvas Area - Empty for JS Integration ]</p>
+                    </div>
+
+                    <div class="stat-row">
+                        <div class="card card-blue">
+                            <h5>Total Events</h5>
+                            <p id="stat-total">0</p>
+                        </div>
+                        <div class="card card-green">
+                            <h5>Active Camps</h5>
+                            <p id="stat-camps">0</p>
+                        </div>
+                        <div class="card card-red">
+                            <h5>Alerts</h5>
+                            <p id="stat-alerts">0</p>
+                        </div>
+                        <div class="card card-cyan">
+                            <h5>Drives</h5>
+                            <p id="stat-drives">0</p>
+                        </div>
+                </div>
+                </div>
+
+                <div class="right-section">
+                    <div class="event-box">
+                        <h4>Recent Health Events</h4>
+                        <p class="empty-msg">[ Event Feed Data Empty ]</p>
+                        <button>Show more</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='map.js') }}"></script>
+
+</body>
+</html>

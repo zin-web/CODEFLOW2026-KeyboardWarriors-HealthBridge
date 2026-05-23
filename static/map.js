@@ -1,9 +1,32 @@
-const map = L.map('map-box').setView([22.5726, 88.3639], 13); //my default region is kolkata
+const map = L.map('map-box').setView([22.5726, 88.3639], 13); //my default region is kolkata here
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
+function updateDashboardStats(resources) {
+    let total = resources.length;
+    let camps = 0;
+    let alerts = 0;
+    let drives = 0;
+
+    resources.forEach(resource => {
+        const title = resource.title.toLowerCase();
+        
+        if (title.includes('camp') || resource.resource_type === 'camp') {
+            camps++;
+        } else if (title.includes('alert') || title.includes('emergency')) {
+            alerts++;
+        } else if (title.includes('drive') || title.includes('donation')) {
+            drives++;
+        }
+    });
+
+    document.getElementById('stat-total').innerText = total;
+    document.getElementById('stat-camps').innerText = camps;
+    document.getElementById('stat-alerts').innerText = alerts;
+    document.getElementById('stat-drives').innerText = drives;
+}
 
 function loadSavedResources() {
     fetch('/api/resources')
@@ -20,6 +43,7 @@ function loadSavedResources() {
 }
 
 loadSavedResources();
+
 
 // map logic for saving pins
 map.on('click', function(e) {

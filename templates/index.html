@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HealthBridge Dashboard</title>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <div class="logo">
+        <!-- HEART ICON -->
+        <i class="fa-solid fa-heart-pulse"></i>
+        <h2>HealthBridge</h2>
+      </div>
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links">
+        <!-- ACTIVE MENU -->
+        <li class="active">
+          <a href="#">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- MAP VIEW -->
+        <li>
+          <a href="#">
+            <i class="fa-regular fa-map"></i>
+            <span>Map View</span>
+          </a>
+        </li>
+        <!-- ADD EVENT -->
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-circle-plus"></i>
+            <span>Add Health Event</span>
+          </a>
+        </li>
+        <!-- ANALYTICS -->
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Analytics</span>
+          </a>
+        </li>
+        <!-- SUPPORT -->
+        <li>
+          <a href="#">
+          <i class="fa-regular fa-circle-question"></i>
+            <span>Support / Info</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <!-- MAIN CONTENT START -->
+    <main class="main-content">
+
+      <!-- TOP HEADER -->
+      <header class="topbar">
+
+        <!-- PAGE TITLE -->
+        <h1>Dashboard</h1>
+
+        <!-- RIGHT HEADER SECTION -->
+        <div class="topbar-right">
+
+          <!-- SEARCH BOX -->
+          <div class="search-box">
+
+            <!-- SEARCH ICON -->
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <!-- SEARCH INPUT -->
+            <input type="text" placeholder="Filter health events..." />
+
+          </div>
+
+          <!-- NOTIFICATION + PROFILE -->
+          <div class="top-icons">
+
+            <!-- PROFILE SECTION -->
+            <div class="profile">
+
+              <!-- USER IMAGE -->
+              <i class="fa-solid fa-house"></i>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <!-- CONTENT GRID -->
+      <div class="content-grid">
+
+        <!-- LEFT PANEL -->
+        <section class="left-panel">
+
+          <!-- MAP CARD -->
+          <div class="map-card">
+
+            <!-- MAP ZOOM CONTROLS -->
+            <div class="map-controls">
+
+              <!-- ZOOM IN -->
+              <button>+</button>
+
+              <!-- ZOOM OUT -->
+              <button>-</button>
+            </div>
+          </div>
+
+
+          <!-- STATS CARDS -->
+          <div class="stats-grid">
+
+            <!-- TOTAL EVENTS -->
+            <div class="stat-card">
+
+              <!-- ICON -->
+              <div class="icon light">
+
+                <i class="fa-regular fa-calendar"></i>
+
+              </div>
+
+              <h4>Total Events:</h4>
+
+              <h2>xxx</h2>
+
+            </div>
+
+            <!-- ACTIVE CAMPS -->
+            <div class="stat-card green-card">
+
+              <div class="icon green-bg">
+
+                <i class="fa-solid fa-campground"></i>
+
+              </div>
+
+              <h4>Active Camps:</h4>
+
+              <h2>xxxx</h2>
+
+            </div>
+
+            <!-- EMERGENCY ALERTS -->
+            <div class="stat-card red-card">
+
+              <div class="icon red-bg">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+              </div>
+
+              <h4>Emergency Alerts:</h4>
+
+              <h2>xxxx</h2>
+
+            </div>
+
+            <!-- DONATION DRIVES -->
+            <div class="stat-card">
+
+              <div class="icon blue-bg">
+
+                <i class="fa-solid fa-hand-holding-droplet"></i>
+
+              </div>
+
+              <h4>Donation Drives:</h4>
+
+              <h2>xxx</h2>
+
+            </div>
+
+          </div>
+
+          <!-- FOOTER TEXT -->
+          <p class="footer-text">
+
+            Focused on Sustainable Development Goals (SDG)
+
+          </p>
+
+        </section>
+
+
+        <!-- RIGHT PANEL -->
+        <aside class="right-panel">
+
+          <!-- EVENTS CARD -->
+          <div class="events-card">
+
+            <!-- TITLE -->
+            <h2>Recent Health Events</h2>
+
+            <!-- EVENT ITEM -->
+            <div class="event-item">
+
+              <!-- EVENT CONTENT -->
+              <div class="event-content"></div>
+
+              </div>
+
+            </div>
+
+            <!-- BUTTON -->
+            <button class="show-more">
+              Show more
+            </button>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,187 +1,250 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-   <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="HealthBridge is a healthcare platform that helps users access medical support, health information, and emergency services.">
   <meta name="keywords" content="healthcare, medical support, hospital, emergency, health app">
   <meta name="author" content="Keyboard Warriors">
   <title>HealthBridge - Landing Page</title>
-<style>
 
+  
 
-/* *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+  <style>
 
-body{
-  width:100%;
-  height:100vh;
-} */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
 
-.main-container{
-  width:88%;
-  height:82vh;
-}
+    body{
+      width:100%;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+      background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
 
-/* .navbar{
-  width:90%;
-  height:60px;
-} */
+      linear-gradient(rgba(255,255,255,0.15),rgba(255,255,255,0.15)),
+      url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2070&auto=format&fit=crop')
+      center/cover no-repeat;
+    }
 
-.navbar{
-  width: 90%;
-  height: 60px;
+    .main-container{
+      width:88%;
+      height:82vh;
+      border-radius:35px;
+      position:relative;
 
-  position: absolute;
-  top: 35px;
-  left: 50%;
-  transform: translateX(-50%);
+      background:rgba(255,255,255,0.14);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+      border:1px solid rgba(255,255,255,0.25);
 
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 0 30px;
-}
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
 
-.nav-links{
-  display: flex;
-  gap: 45px;
-}
+      box-shadow:
+      0 8px 32px rgba(0,0,0,0.18),
+      inset 0 1px 1px rgba(255,255,255,0.2);
 
-.nav-links a{
-  text-decoration: none;
-  color: #111;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: 'Poppins', sans-serif;
-  transition: 0.3s;
-}
+      overflow:hidden;
+    }
+    .navbar{
+      width:90%;
+      height:60px;
 
-.nav-links a:hover{
-  color: #4f46e5;
-}
+      position:absolute;
+      top:35px;
+      left:50%;
+      transform:translateX(-50%);
 
-/* .hero{
-  width:100%;
-  height:100%;
+      border-radius:25px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      padding:0 30px;
+    }
+
+   
+    .nav-links{
+      display:flex;
+      gap:45px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#2b2b2b;
+      font-size:16px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#0099ff;
+    }
+
+  
+    .login-btn{
+  width:44px;
+  height:44px;
+
+  border:none;
+  border-radius:14px;
+
+  background:rgba(255,255,255,0.14);
+
+  border:1px solid rgba(255,255,255,0.18);
+
+  backdrop-filter:blur(14px);
+
   display:flex;
+  justify-content:center;
   align-items:center;
-  justify-content:space-between;
+
+  cursor:pointer;
+
+  transition:0.3s;
 }
 
-.left{
-  width:48%;
-}
 
-.right{
-  width:38%;
-}
+    .hero{
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
 
-.image-card{
-  width:350px;
-  height:350px;
-}
+      padding:140px 80px 60px 80px;
+    }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  overflow: hidden;
+    .left{
+      width:48%;
+    }
 
-  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
-  font-family: 'Poppins', sans-serif;
-} */
+    .left h1{
+      font-size:48px;
+      line-height:1.1;
+      color:#111827;
+      margin-bottom:22px;
+      font-weight:700;
+    }
 
-/* Base (Desktop first design) */
+    .left p{
+      font-size:14px;
+      line-height:1.9;
+      color:#444;
+      margin-bottom:35px;
+      max-width:700px;
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+    .start-btn{
+      padding:18px 34px;
+      border:none;
+      border-radius:18px;
+      margin-top:-15px;
+      font-size:18px;
+      font-weight:600;
 
-body {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
-}
+      cursor:pointer;
 
-/* HERO SECTION */
-.hero {
-  width: 90%;
-  max-width: 1200px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-}
+      background:rgba(255,255,255,0.28);
 
-/* LEFT SIDE */
-.left {
-  width: 48%;
-}
+      backdrop-filter:blur(12px);
 
-.left h1 {
-  font-size: 58px;
-  line-height: 1.1;
-  color: #111827;
-}
+      border:1px solid rgba(255,255,255,0.35);
 
-.left p {
-  font-size: 18px;
-  color: #4b5563;
-  margin: 20px 0 35px;
-}
+      box-shadow:
+      0 8px 18px rgba(0,0,0,0.08);
 
-/* BUTTON */
-.start-btn {
-  padding: 15px 38px;
-  border: none;
-  border-radius: 10px;
-  background: #2563eb;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
+      transition:0.3s;
+    }
 
-.start-btn:hover {
-  background: #1e40af;
-  transform: translateY(-2px);
-}
+    .start-btn:hover{
+      transform:translateY(-3px);
+      background:rgba(255,255,255,0.4);
+    }
 
-/* RIGHT SIDE */
-.right {
-  width: 38%;
-  display: flex;
-  justify-content: center;
-}
+    /* RIGHT IMAGE */
 
-.image-card {
-  width: 350px;
-  height: 350px;
-  border-radius: 25px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+    .right{
+      width:38%;
+      display:flex;
+      justify-content:right;
+      align-items:center;
+    }
 
-.image-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .image-card{
+      width:350px;
+      height:350px;
 
-/* for Laptop */
+      border-radius:35px;
+
+      overflow:hidden;
+
+      background:rgba(255,255,255,0.14);
+
+      border:1px solid rgba(255,255,255,0.28);
+
+      backdrop-filter:blur(14px);
+
+      box-shadow:
+      0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .image-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    /* BOTTOM BUTTONS */
+
+    .bottom-buttons{
+      position:absolute;
+      bottom:28px;
+      left:50%;
+      transform:translateX(-50%);
+
+      display:flex;
+      gap:26px;
+    }
+
+    .glass-btn{
+      padding:10px 20px;
+      border-radius:14px;
+
+      border:1px solid rgba(255,255,255,0.3);
+
+      background:rgba(255,255,255,0.18);
+
+      backdrop-filter:blur(12px);
+
+      cursor:pointer;
+
+      font-size:16px;
+      font-weight:600;
+
+      color:#222;
+
+      transition:0.3s;
+
+      box-shadow:
+      0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .glass-btn:hover{
+      transform:translateY(-4px);
+      background:rgba(255,255,255,0.35);
+    }
+
+    /* RESPONSIVE */
+
+    /* for Laptop */
 @media (max-width:1200px){
 
   .hero{
@@ -269,46 +332,53 @@ body {
 }
 
 
-</style>
-
+  </style>
 </head>
-
 
 <body>
 
   <div class="main-container">
 
-    <nav class="navbar">
-        <div class="nav-links">
-      <a href="landing.html">Home</a>
-      <a href="index.html">Dashboard</a>
-      <a href="support.html">Contact Us</a>
-  </div>
+   
 
+    <nav class="navbar">
+
+      
+
+      <div class="nav-links">
+        <a href="Landing.html">Home</a>
+        <a href="index.html">Dashboard</a>
+        <a href="support.html">Contact</a>
+      </div>
+
+    
     </nav>
 
     <section class="hero">
-       <div class="left">
+
+      <div class="left">
+
       <h1>Welcome to HealthBridge</h1>
       <p>Your gateway to comprehensive healthcare support and information.</p>
-       <button class="start-btn">
-      Get Started
-    </button>
 
-    </div>
+        <button class="start-btn">
+          Get Started
+        </button>
 
-  <div class="right">
+      </div>
 
-    <div class="image-card">
+      <div class="right">
 
-      <img src="IMAGE">
+        <div class="image-card">
 
-    </div>
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2070&auto=format&fit=crop" alt="">
 
-  </div>
+        </div>
+
+      </div>
+
     </section>
-
-  </div>
+</div>
 
 </body>
 </html>

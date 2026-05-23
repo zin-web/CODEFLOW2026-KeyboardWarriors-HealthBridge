@@ -9,7 +9,7 @@
 <style>
 
 
-*{
+/* *{
   margin:0;
   padding:0;
   box-sizing:border-box;
@@ -19,7 +19,7 @@
 body{
   width:100%;
   height:100vh;
-}
+} */
 
 .main-container{
   width:88%;
@@ -67,7 +67,7 @@ body{
   color: #4f46e5;
 }
 
-.hero{
+/* .hero{
   width:100%;
   height:100%;
   display:flex;
@@ -87,6 +87,103 @@ body{
   width:350px;
   height:350px;
 }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+  font-family: 'Poppins', sans-serif;
+} */
+
+/* Base (Desktop first design) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+
+  /* 🌿 Modern health background */
+  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+}
+
+/* HERO SECTION */
+.hero {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* LEFT SIDE */
+.left {
+  width: 48%;
+}
+
+.left h1 {
+  font-size: 58px;
+  line-height: 1.1;
+  color: #111827;
+}
+
+.left p {
+  font-size: 18px;
+  color: #4b5563;
+  margin: 20px 0 35px;
+}
+
+/* BUTTON */
+.start-btn {
+  padding: 15px 38px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.start-btn:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* RIGHT SIDE */
+.right {
+  width: 38%;
+  display: flex;
+  justify-content: center;
+}
+
+.image-card {
+  width: 350px;
+  height: 350px;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
 </style>
 
 </head>

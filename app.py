@@ -15,13 +15,9 @@ def dashboard():
     return render_template('index.html')
 @app.route('/dashboard')
 def index():
-    # You can pass data to your dashboard here (e.g., patient stats)
     return render_template('dashboard.html')
-
-# Support Route
 @app.route('/support')
 def support():
-    # This route could display FAQs or a contact form
     return render_template('support.html')
 
 @app.route('/api/resources', methods=['GET'])

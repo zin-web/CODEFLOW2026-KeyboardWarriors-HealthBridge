@@ -11,9 +11,7 @@
     overflow: hidden;
 }
 
-/* ==========================================================================
-   NAVIGATION BAR
-   ========================================================================== */
+
 .navbar {
     width: 260px;
     background-color: #0f3d59;
@@ -89,7 +87,7 @@
     font-weight: 700;
 }
 
-/* Filter Selection Layout Styling */
+
 .filter-wrapper {
     display: flex;
     align-items: center;
@@ -119,15 +117,13 @@
     border-color: #0f3d59;
 }
 
-/* ==========================================================================
-   WORKSPACE GRID ARRANGEMENT
-   ========================================================================== */
+
 .workspace {
     display: flex;
     padding: 0 28px 28px 28px;
     gap: 24px;
     flex: 1;
-    min-height: 0; /* Prevents flex boxes from blowing past bounds */
+    min-height: 0; 
 }
 
 .left-section {
@@ -155,9 +151,7 @@
     overflow: hidden;
 }
 
-/* ==========================================================================
-   METRIC DATA CARDS
-   ========================================================================== */
+
 .stat-row {
     display: flex;
     gap: 16px;
@@ -198,9 +192,7 @@
 .card-red { border-left: 4px solid #ef4444; }
 .card-cyan { border-left: 4px solid #06b6d4; }
 
-/* ==========================================================================
-   RECENTS EVENTS BOX SIDEBAR
-   ========================================================================== */
+
 .recent-events-box {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
@@ -228,7 +220,7 @@
     padding-right: 4px;
 }
 
-/* Dynamic Scrollbar Tuning for Feed Container */
+
 #recent-events-feed::-webkit-scrollbar {
     width: 5px;
 }
@@ -264,9 +256,7 @@
     color: #1e293b;
 }
 
-/* ==========================================================================
-   MODAL WINDOW DIALOGUES
-   ========================================================================== */
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -374,9 +364,7 @@
     to { transform: scale(1); opacity: 1; }
 }
 
-/* ==========================================================================
-   EXTERNAL LEAFLET WIDGET EXTENSIONS
-   ========================================================================== */
+
 .leaflet-control-geocoder {
     border-radius: 8px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;

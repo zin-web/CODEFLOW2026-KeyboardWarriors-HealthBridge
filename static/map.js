@@ -4,6 +4,52 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
+function showCustomModal(titleText, subtitleText, placeholderText) {
+    return new Promise((resolve) => {
+        const modal = document.getElementById('custom-modal');
+        const modalTitle = modal.querySelector('.modal-title');
+        const modalSubtitle = modal.querySelector('.modal-subtitle');
+        const input = document.getElementById('modal-input');
+        const cancelBtn = document.getElementById('modal-cancel-btn');
+        const submitBtn = document.getElementById('modal-submit-btn');
+
+        modalTitle.innerText = titleText;
+        modalSubtitle.innerText = subtitleText;
+        input.placeholder = placeholderText;
+        
+        input.value = '';
+        modal.classList.remove('modal-hidden');
+        input.focus();
+
+        function cleanUp() {
+            modal.classList.add('modal-hidden');
+            submitBtn.removeEventListener('click', handleSubmit);
+            cancelBtn.removeEventListener('click', handleCancel);
+            input.removeEventListener('keydown', handleKeyDown);
+        }
+
+        function handleSubmit() {
+            const value = input.value.trim();
+            cleanUp();
+            resolve(value ? value : null); 
+        }
+
+        function handleCancel() {
+            cleanUp();
+            resolve(null);
+        }
+
+        function handleKeyDown(e) {
+            if (e.key === 'Enter') handleSubmit();
+            if (e.key === 'Escape') handleCancel();
+        }
+
+        submitBtn.addEventListener('click', handleSubmit);
+        cancelBtn.addEventListener('click', handleCancel);
+        input.addEventListener('keydown', handleKeyDown);
+    });
+}
+
 function updateDashboardStats(resources) {
     let total = resources.length;
     let camps = 0;
@@ -45,7 +91,6 @@ function loadSavedResources() {
                     .bindPopup(`<b>${resource.title}</b><br>${resource.description}`);
             });
 
-     
             updateDashboardStats(resources);
             const newestFirst = [...resources].reverse();
             updateRecentEventsFeed(newestFirst);
@@ -55,16 +100,23 @@ function loadSavedResources() {
 
 loadSavedResources();
 
-
-// map logic for saving pins
-map.on('click', function(e) {
+map.on('click', async function(e) {
     const clickLat = e.latlng.lat;
     const clickLng = e.latlng.lng;
 
-    const title = prompt("Enter Resource Title (e.g., Blood Donation Drive, Health Camp):");
+
+    const title = await showCustomModal(
+        "Create New Resource", 
+        "Enter Resource Title (e.g., Blood Donation Drive, Health Camp):", 
+        "e.g., Blood Donation Drive"
+    );
     if (!title) return; 
 
-    const description = prompt("Enter Description:");
+    const description = await showCustomModal(
+        "Add Details", 
+        `Provide descriptive context for: "${title}"`, 
+        "e.g., Timings, target audience, or requirements..."
+    );
 
     let resourceType = "other";
     if (title.toLowerCase().includes('camp')) resourceType = "camp";
@@ -81,7 +133,7 @@ map.on('click', function(e) {
             type: resourceType,   
             lat: clickLat,        
             lng: clickLng,        
-            description: description
+            description: description || 'No description provided.'
         })
     })
     .then(response => {
@@ -91,16 +143,13 @@ map.on('click', function(e) {
         return response.json();
     })
     .then(newResource => {
-
-
         console.log('Successfully saved to database:', newResource);
-       
         loadSavedResources(); 
     })
     .catch(error => console.error('Error saving pin:', error));
 });
 
-//recent feed upload logic 
+
 function updateRecentEventsFeed(resources) {
     const feedContainer = document.getElementById('recent-events-feed');
     if (!feedContainer) return;

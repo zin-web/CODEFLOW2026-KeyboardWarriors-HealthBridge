@@ -5,6 +5,7 @@
     <title>HealthBridge Dashboard</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
 </head>
 <body>
 
@@ -12,25 +13,17 @@
         
         <div class="navbar">
             <h2>HealthBridge</h2>
+            <a href="/landing">Home</a>
             <a href="#" class="active">Dashboard</a>
-            <a href="#">Analytics</a>
             <a href="/support">Support Page</a>
         </div>
 
         <div class="content">
             
             <div class="header">
-                <h3>Dashboard View</h3>
-                    <input type="text" placeholder="Filter health events...">
-            <div class="filter-wrapper">
-                <label for="type-filter">Filter Event Type:</label>
-                <select id="type-filter">
-                <option value="all">Show All Events</option>
-                <option value="camp">Health Camps</option>
-                <option value="drive">Donation Drives</option>
-                <option value="alert">Emergency Alerts</option>
-                </select>
-            </div>
+                <h3>Dashboard</h3>
+                   
+            
             </div>
              <div>
                 <h2 class="heading_of_contents">Add Health Events</h2>
@@ -75,6 +68,21 @@
         </div>
 
     </div>
+
+    <div id="custom-modal" class="modal-overlay modal-hidden">
+        <div class="modal-box">
+            <h3 class="modal-title">Create New Event</h3>
+            <p class="modal-subtitle">Enter Event Title (e.g., Blood Donation Drive, Health Camp):</p>
+            
+            <input type="text" id="modal-input" placeholder="e.g., Blood Donation Drive" autocomplete="off">
+            
+            <div class="modal-actions">
+                <button id="modal-cancel-btn" class="modal-btn btn-secondary">Cancel</button>
+                <button id="modal-submit-btn" class="modal-btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="{{ url_for('static', filename='map.js') }}"></script>
 

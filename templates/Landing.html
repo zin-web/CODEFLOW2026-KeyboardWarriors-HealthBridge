@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -369,6 +369,221 @@
     </div>
 
   </div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HealthBridge Landing</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#e0f7fa,#e8f5e9);
+}
+
+/* MAIN CARD */
+.main-container{
+  width:90%;
+  height:90vh;
+  background:rgba(255,255,255,0.25);
+  backdrop-filter:blur(18px);
+  border-radius:30px;
+  border:1px solid rgba(255,255,255,0.4);
+  box-shadow:0 10px 40px rgba(0,0,0,0.1);
+  position:relative;
+  padding:20px 60px;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 0;
+}
+
+.logo{
+  width:45px;
+  height:45px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#00b7ff,#00d4ff);
+  color:white;
+  font-weight:700;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:18px;
+  box-shadow:0 5px 15px rgba(0,183,255,0.3);
+}
+
+.nav-links{
+  display:flex;
+  gap:35px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#1f2937;
+  font-weight:600;
+  font-size:15px;
+}
+
+/* HERO */
+.hero{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:60px;
+  gap:40px;
+}
+
+.left{
+  width:50%;
+}
+
+.left h1{
+  font-size:52px;
+  color:#111827;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+
+.left p{
+  font-size:15px;
+  color:#4b5563;
+  line-height:1.8;
+  margin-bottom:30px;
+}
+
+.start-btn{
+  padding:14px 30px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#00b7ff,#00d4ff);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* RIGHT IMAGE */
+.right{
+  width:45%;
+  display:flex;
+  justify-content:center;
+}
+
+.image-card{
+  width:100%;
+  max-width:420px;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+}
+
+.image-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* FEATURES */
+.features{
+  position:absolute;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:20px;
+}
+
+.feature-card{
+  padding:14px 22px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.3);
+  backdrop-filter:blur(10px);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.hero{
+  flex-direction:column;
+}
+
+.left,.right{
+  width:100%;
+}
+
+.main-container{
+  height:auto;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="main-container">
+
+  <div class="navbar">
+    <div class="logo">H</div>
+
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/support">Contact</a>
+    </div>
+  </div>
+
+  <div class="hero">
+
+    <div class="left">
+      <h1>Connecting Donors, Hospitals & Lives</h1>
+      <p>
+        Track live blood donation camps, locate nearby hospitals,
+        monitor emergency blood requests, and manage healthcare support.
+      </p>
+
+      <button class="start-btn">Get Started</button>
+    </div>
+
+    <div class="right">
+      <div class="image-card">
+
+        <!-- ✅ YOUR LOCAL IMAGE FROM PROJECT -->
+        <img src="images/landing_page.jpeg" alt="Healthcare Image">
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="features">
+    <div class="feature-card">Live Map</div>
+    <div class="feature-card">Emergency Alerts</div>
+    <div class="feature-card">Blood Banks</div>
+  </div>
+
+</div>
 
 </body>
 </html>

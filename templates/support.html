@@ -1,106 +1,709 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HealthBridge - Support Page</title>
-    <style>
-        *{
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Healthcare Support Page</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
   margin:0;
   padding:0;
   box-sizing:border-box;
-       }
+  font-family:'Poppins',sans-serif;
+}
 
-/* body{
+body{
   width:100%;
   height:100vh;
-} */
 
- body {
-  margin: 0;
-  min-height: 100vh;
-  overflow: hidden;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
-  font-family: 'Poppins', sans-serif;
-} 
+  overflow:hidden;
 
-
+  background:linear-gradient(135deg, #e0f7fa, #e8f5e9);
+}
 
 
 
 .main-container{
   width:88%;
   height:84vh;
+
+  position:relative;
+
+  border-radius:35px;
+
+  background:rgba(255,255,255,0.28);
+
+  border:1px solid rgba(255,255,255,0.35);
+
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+
+  box-shadow:
+  0 8px 32px rgba(0,0,0,0.10);
+
+  overflow:hidden;
 }
 
-.content{
+
+
+.navbar{
+  width:90%;
+  height:60px;
+
+  position:absolute;
+
+  top:30px;
+  left:50%;
+
+  transform:translateX(-50%);
+
+  border-radius:22px;
+
   display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:0 28px;
 }
+
+.logo{
+  width:42px;
+  height:42px;
+
+  border:none;
+  border-radius:14px;
+
+  background:linear-gradient(135deg,#00b7ff,#00d4ff);
+
+  color:white;
+
+  font-size:20px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  box-shadow:
+  0 4px 16px rgba(0,183,255,0.35);
+}
+
+.nav-links{
+  display:flex;
+  gap:42px;
+}
+
+.nav-links a{
+  text-decoration:none;
+
+  color:#1f2937;
+
+  font-size:15px;
+  font-weight:600;
+
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#0099ff;
+}
+
+
+
+.content{
+  width:100%;
+  height:100%;
+
+  display:flex;
+  gap:35px;
+
+  padding:105px 30px 30px 30px;
+}
+
+
 
 .left-box{
   width:32%;
+  height:88%;
+
+  margin-top:20px;
+
+  border-radius:32px;
+
+  background:rgba(255,255,255,0.22);
+
+  border:1px solid rgba(255,255,255,0.30);
+
+  backdrop-filter:blur(16px);
+
+  padding:35px;
+
+  overflow-y:auto;
+  overflow-x:hidden;
 }
+
+.left-box::-webkit-scrollbar{
+  width:0;
+}
+
+.left-box{
+  scrollbar-width:none;
+}
+
+.left-box h1{
+  color:#111827;
+
+  font-size:38px;
+
+  line-height:1.1;
+
+  margin-bottom:14px;
+}
+
+.left-desc{
+  color:#4b5563;
+
+  font-size:13px;
+
+  line-height:1.8;
+
+  margin-bottom:25px;
+}
+
+
+
+.contact-form{
+  margin-top:10px;
+}
+
+.input-box{
+  margin-bottom:12px;
+}
+
+.input-box input,
+.input-box textarea{
+
+  width:100%;
+
+  border:none;
+  outline:none;
+
+  padding:14px 16px;
+
+  border-radius:14px;
+
+  background:rgba(255,255,255,0.30);
+
+  border:1px solid rgba(255,255,255,0.30);
+
+  backdrop-filter:blur(10px);
+
+  color:#111827;
+
+  font-size:13px;
+}
+
+.input-box textarea{
+  height:90px;
+  resize:none;
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder{
+  color:#6b7280;
+}
+
+.submit-btn{
+
+  width:100%;
+
+  padding:14px;
+
+  border:none;
+
+  border-radius:16px;
+
+  cursor:pointer;
+
+  font-size:14px;
+  font-weight:600;
+
+  color:white;
+
+  background:linear-gradient(135deg,#00b7ff,#00d4ff);
+
+  transition:0.3s;
+}
+
+.submit-btn:hover{
+  transform:translateY(-2px);
+
+  box-shadow:0 6px 18px rgba(0,183,255,0.30);
+}
+
+
 
 .right-box{
   width:68%;
+  height:88%;
+
+  margin-top:20px;
+
+  border-radius:30px;
+
+  background:rgba(255,255,255,0.22);
+
+  border:1px solid rgba(255,255,255,0.30);
+
+  backdrop-filter:blur(16px);
+
+  padding:30px;
+
+  overflow-y:auto;
 }
+
+.right-box::-webkit-scrollbar{
+  width:0;
+}
+
+.help-heading{
+  margin-bottom:25px;
+}
+
+.help-heading h1{
+  font-size:42px;
+
+  color:#111827;
+
+  line-height:1.1;
+
+  margin-bottom:10px;
+}
+
+.right-box h2{
+  font-size:28px;
+
+  color:#111827;
+
+  margin-bottom:8px;
+}
+
+.faq-top-text{
+  color:#4b5563;
+
+  margin-bottom:20px;
+
+  font-size:13px;
+}
+
+
+
+.faq-item{
+  margin-bottom:18px;
+}
+
+.faq-question{
+
+  width:100%;
+
+  border:none;
+
+  padding:18px 20px;
+
+  border-radius:16px;
+
+  background:rgba(255,255,255,0.35);
+
+  border:1px solid rgba(255,255,255,0.40);
+
+  backdrop-filter:blur(12px);
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  cursor:pointer;
+
+  font-size:14px;
+  font-weight:600;
+
+  color:#1f2937;
+
+  transition:0.3s;
+}
+
+.faq-question:hover{
+  background:rgba(255,255,255,0.50);
+}
+
+.faq-question span{
+  font-size:28px;
+  font-weight:400;
+}
+
+.faq-answer{
+
+  max-height:0;
+
+  overflow:hidden;
+
+  transition:0.4s ease;
+
+  background:rgba(255,255,255,0.20);
+
+  border-radius:0 0 16px 16px;
+
+  margin-top:6px;
+
+  padding:0 20px;
+
+  color:#374151;
+
+  line-height:1.7;
+
+  font-size:13px;
+}
+
+.faq-answer.active{
+  max-height:200px;
+
+  padding:20px;
+}
+
+
+
+@media(max-width:1000px){
+
+  body{
+    height:auto;
+    padding:30px 0;
+  }
+
+  .main-container{
+    height:auto;
+    padding-bottom:30px;
+  }
+
+  .content{
+    flex-direction:column;
+  }
+
+  .left-box,
+  .right-box{
+    width:100%;
+    height:auto;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+}
+
 </style>
+
 </head>
+
 <body>
 
-<!-- <div class="main-container">
-
-  <nav class="navbar"></nav>
-
-  <div class="content">
-
-    <div class="left-box"></div>
-
-    <div class="right-box"></div>
-
-  </div> -->
-
-<!-- </div> -->
 <div class="main-container">
 
+
+
   <nav class="navbar">
-    <div class="logo">C</div>
+
+    <button class="logo">H</button>
 
     <div class="nav-links">
       <a href="Landing.html">Home</a>
-      <a href="index.html">Dashboard</a>
-      <a href="support.html">Contact Us</a>
+      <a href="#">Dashboard</a>
+      <a href="support.html">Contact</a>
     </div>
 
-    <div class="login-btn">→</div>
+    <button class="login-btn">
+
+      <svg viewBox="0 0 24 24">
+        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+        <polyline points="10 17 15 12 10 7"/>
+        <line x1="15" y1="12" x2="3" y2="12"/>
+      </svg>
+
+    </button>
+
   </nav>
+
+  
 
   <div class="content">
 
+  
+
     <div class="left-box">
-      <h1>Contact Support</h1>
 
-      <p>Send us your issue and we will help you quickly.</p>
+      <h1>
+        Contact Support
+      </h1>
 
-      <form>
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <input type="text" placeholder="Subject">
-        <textarea placeholder="Message"></textarea>
+      <p class="left-desc">
+        Send us your issue and our healthcare support team will help you quickly.
+      </p>
 
-        <button type="submit">Send</button>
+      <form class="contact-form">
+
+        <div class="input-box">
+          <input type="text" placeholder="Your Name">
+        </div>
+
+        <div class="input-box">
+          <input type="email" placeholder="Email Address">
+        </div>
+
+        <div class="input-box">
+          <input type="text" placeholder="Subject">
+        </div>
+
+        <div class="input-box">
+          <textarea placeholder="Write your message"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Submit Message
+        </button>
+
       </form>
+
     </div>
 
-    <div class="right-box">
-      <h1>How Can We Help You?</h1>
 
-      <div class="faq">
-        <button>How do I report an issue?</button>
-        <p>Use dashboard to submit issue.</p>
+    <div class="right-box">
+
+      <div class="help-heading">
+
+        <h1>
+          How Can We Help You?
+        </h1>
+
+      </div>
+
+      <h2>General FAQs</h2>
+
+      <p class="faq-top-text">
+        Everything you need to know about our blood donation and healthcare platform.
+      </p>
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Who can donate blood?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Healthy individuals between 18-65 years old can usually donate blood.
+        </div>
+
+      </div>
+
+      
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          How often can I donate blood?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Most people can donate whole blood once every 3 months.
+        </div>
+
+      </div>
+
+     
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Is blood donation safe?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Yes, sterile and single-use medical equipment is used for every donation.
+        </div>
+
+      </div>
+
+      
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          How do I find nearby blood donation camps?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          You can use the live map dashboard to locate nearby blood donation camps and hospitals.
+        </div>
+
+      </div>
+
+      
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Can I track emergency blood requests?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Yes, the dashboard provides real-time emergency alerts and request tracking.
+        </div>
+
       </div>
 
     
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Can hospitals manage camps through the app?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Yes, hospitals can create, manage, and update blood donation camps directly from the dashboard.
+        </div>
+
+      </div>
+
+     
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Does the app show blood availability?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Yes, users can check available blood groups from nearby hospitals and blood banks.
+        </div>
+
+      </div>
+
+     
+
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Is my medical data secure?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Yes, all personal and medical information is encrypted and securely protected.
+        </div>
+        
+
+<div class="faq-item">
+
+  <button class="faq-question">
+    How do I use the live map feature?
+    <span>+</span>
+  </button>
+
+  <div class="faq-answer">
+    Open the Live Map section from the dashboard to view nearby hospitals, blood banks, emergency requests, and active donation camps in real-time.
+  </div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+  <button class="faq-question">
+    How can I navigate to a blood donation camp?
+    <span>+</span>
+  </button>
+
+  <div class="faq-answer">
+    Click on any map marker to view camp details and use the navigation option to get directions through Google Maps.
+  </div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+  <button class="faq-question">
+    What should I do if the map is not loading?
+    <span>+</span>
+  </button>
+
+  <div class="faq-answer">
+    Check your internet connection and make sure location access is enabled on your device. Refresh the page and try again.
+  </div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+  <button class="faq-question">
+    Why can’t I see nearby hospitals or camps?
+    <span>+</span>
+  </button>
+
+  <div class="faq-answer">
+    Please enable GPS or location permissions in your browser or mobile settings to allow the app to show nearby services accurately.
+  </div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+  <button class="faq-question">
+    Can I report incorrect map information?
+    <span>+</span>
+  </button>
+
+  <div class="faq-answer">
+    Yes, users can report incorrect hospital locations, closed camps, or outdated information directly through the support form.
+  </div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+  <button class="faq-question">
+    How do emergency alerts work on the map?
+    <span>+</span>
+  </button>
+
+  <div class="faq-answer">
+    Emergency requests appear as highlighted markers on the live map so nearby donors and hospitals can respond quickly.
+  </div>
+
+</div>
+
+      </div>
 
     </div>
 
@@ -108,9 +711,23 @@
 
 </div>
 
+<script>
 
+const questions = document.querySelectorAll(".faq-question");
 
+questions.forEach(question => {
+
+  question.addEventListener("click", () => {
+
+    const answer = question.nextElementSibling;
+
+    answer.classList.toggle("active");
+
+  });
+
+});
+
+</script>
 
 </body>
-
 </html>

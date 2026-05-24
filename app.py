@@ -14,13 +14,11 @@ def home():
 #dashboard route
 @app.route('/dashboard')
 def dashboard():
-
     return render_template('dashboard.html')
-    
+
 # Support Route
 @app.route('/support')
 def support():
-
     return render_template('support.html')
 
 @app.route('/api/resources', methods=['GET'])

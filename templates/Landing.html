@@ -1,312 +1,372 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-   <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="HealthBridge is a healthcare platform that helps users access medical support, health information, and emergency services.">
-  <meta name="keywords" content="healthcare, medical support, hospital, emergency, health app">
-  <meta name="author" content="Keyboard Warriors">
-  <title>HealthBridge - Landing Page</title>
-<style>
+  <title>Healthcare Landing Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      width:100%;
+      height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      overflow:hidden;
+
+      background:linear-gradient(135deg, #e0f7fa, #e8f5e9);
+    }
+
+    .main-container{
+      width:88%;
+      height:84vh;
+
+      border-radius:35px;
+
+      position:relative;
+
+      background:rgba(255,255,255,0.28);
+
+      border:1px solid rgba(255,255,255,0.35);
+
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+
+      box-shadow:
+      0 8px 32px rgba(0,0,0,0.10);
+
+      overflow:hidden;
+    }
+
+    .navbar{
+      width:90%;
+      height:60px;
+
+      position:absolute;
+      top:30px;
+      left:50%;
+
+      transform:translateX(-50%);
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      padding:0 28px;
+    }
+
+    .logo{
+      width:42px;
+      height:42px;
+
+      border:none;
+      border-radius:14px;
+
+      background:linear-gradient(135deg,#00b7ff,#00d4ff);
+
+      color:white;
+
+      font-size:20px;
+      font-weight:700;
+
+      cursor:pointer;
+
+      box-shadow:
+      0 4px 16px rgba(0,183,255,0.35);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:42px;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+
+      color:#1f2937;
+
+      font-size:15px;
+      font-weight:600;
+
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#0099ff;
+    }
+
+     .hero{
+      width:100%;
+      height:100%;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      padding:130px 70px 60px 70px;
+    }
 
 
-/* *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+    .left{
+      width:50%;
+    }
 
-body{
-  width:100%;
-  height:100vh;
-} */
+    .left h1{
+      font-size:58px;
 
-.main-container{
-  width:88%;
-  height:82vh;
-}
+      line-height:1.1;
 
-/* .navbar{
-  width:90%;
-  height:60px;
-} */
+      color:#111827;
 
-.navbar{
-  width: 90%;
-  height: 60px;
+      margin-bottom:22px;
 
-  position: absolute;
-  top: 35px;
-  left: 50%;
-  transform: translateX(-50%);
+      font-weight:700;
+    }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    .left p{
+      font-size:15px;
 
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 0 30px;
-}
+      line-height:1.9;
 
-.nav-links{
-  display: flex;
-  gap: 45px;
-}
+      color:#4b5563;
 
-.nav-links a{
-  text-decoration: none;
-  color: #111;
-  font-size: 16px;
-  font-weight: 500;
-  font-family: 'Poppins', sans-serif;
-  transition: 0.3s;
-}
+      margin-bottom:35px;
 
-.nav-links a:hover{
-  color: #4f46e5;
-}
+      max-width:650px;
+    }
 
-/* .hero{
-  width:100%;
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
+    .start-btn{
+      padding:16px 34px;
 
-.left{
-  width:48%;
-}
+      border:none;
 
-.right{
-  width:38%;
-}
+      border-radius:18px;
 
-.image-card{
-  width:350px;
-  height:350px;
-}
+      font-size:16px;
+      font-weight:600;
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  overflow: hidden;
+      cursor:pointer;
 
-  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
-  font-family: 'Poppins', sans-serif;
-} */
+      color:white;
 
-/* Base (Desktop first design) */
+      background:linear-gradient(135deg,#00b7ff,#00d4ff);
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+      transition:0.3s;
 
-body {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
-}
+      box-shadow:
+      0 6px 18px rgba(0,183,255,0.25);
+    }
 
-/* HERO SECTION */
-.hero {
-  width: 90%;
-  max-width: 1200px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-}
+    .start-btn:hover{
+      transform:translateY(-3px);
+    }
 
-/* LEFT SIDE */
-.left {
-  width: 48%;
-}
+  
 
-.left h1 {
-  font-size: 58px;
-  line-height: 1.1;
-  color: #111827;
-}
+    .right{
+      width:40%;
 
-.left p {
-  font-size: 18px;
-  color: #4b5563;
-  margin: 20px 0 35px;
-}
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
 
-/* BUTTON */
-.start-btn {
-  padding: 15px 38px;
-  border: none;
-  border-radius: 10px;
-  background: #2563eb;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
+    .image-card{
+      width:370px;
+      height:430px;
 
-.start-btn:hover {
-  background: #1e40af;
-  transform: translateY(-2px);
-}
+      border-radius:35px;
 
-/* RIGHT SIDE */
-.right {
-  width: 38%;
-  display: flex;
-  justify-content: center;
-}
+      overflow:hidden;
 
-.image-card {
-  width: 350px;
-  height: 350px;
-  border-radius: 25px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+      background:rgba(255,255,255,0.22);
 
-.image-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+      border:1px solid rgba(255,255,255,0.30);
 
-/* for Laptop */
-@media (max-width:1200px){
+      backdrop-filter:blur(14px);
 
-  .hero{
-    gap:40px;
-  }
+      box-shadow:
+      0 10px 30px rgba(0,0,0,0.12);
+    }
 
-  .left h1{
-    font-size:50px;
-  }
+    .image-card img{
+      width:100%;
+      height:100%;
 
-  .image-card{
-    width:320px;
-    height:320px;
-  }
-}
+      object-fit:cover;
+    }
 
-/* for tablet */
-@media (max-width:900px){
+  
 
-  .hero{
-    flex-direction:column;
-    text-align:center;
-  }
+    .bottom-buttons{
+      position:absolute;
 
-  .left,
-  .right{
-    width:100%;
-  }
+      bottom:28px;
+      left:50%;
 
-  .left h1{
-    font-size:42px;
-  }
+      transform:translateX(-50%);
 
-  .image-card{
-    width:300px;
-    height:300px;
-  }
-}
+      display:flex;
+      gap:22px;
+    }
 
-/* for large mobile */
-@media (max-width:600px){
+    .glass-btn{
+      padding:12px 22px;
 
-  .left h1{
-    font-size:34px;
-  }
+      border-radius:14px;
 
-  .left p{
-    font-size:15px;
-  }
+      border:1px solid rgba(255,255,255,0.35);
 
-  .image-card{
-    width:260px;
-    height:260px;
-  }
-}
+      background:rgba(255,255,255,0.25);
 
-/* for small mobile*/
-@media (max-width:480px){
+      backdrop-filter:blur(12px);
 
-  body{
-    padding:20px;
-  }
+      cursor:pointer;
 
-  .hero{
-    gap:30px;
-  }
+      font-size:14px;
+      font-weight:600;
 
-  .left h1{
-    font-size:28px;
-  }
+      color:#1f2937;
 
-  .left p{
-    font-size:14px;
-  }
+      transition:0.3s;
 
-  .start-btn{
-    padding:12px 28px;
-    font-size:14px;
-  }
+      box-shadow:
+      0 6px 18px rgba(0,0,0,0.06);
+    }
 
-  .image-card{
-    width:220px;
-    height:220px;
-  }
-}
+    .glass-btn:hover{
+      transform:translateY(-4px);
 
+      background:rgba(255,255,255,0.40);
+    }
 
-</style>
+    
 
+    @media(max-width:1000px){
+
+      body{
+        height:auto;
+        padding:30px 0;
+      }
+
+      .main-container{
+        height:auto;
+        padding-bottom:120px;
+      }
+
+      .hero{
+        flex-direction:column;
+        gap:50px;
+
+        padding:130px 30px 60px 30px;
+      }
+
+      .left,
+      .right{
+        width:100%;
+      }
+
+      .left h1{
+        font-size:42px;
+      }
+
+      .image-card{
+        width:100%;
+        height:350px;
+      }
+
+      .bottom-buttons{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+    }
+
+  </style>
 </head>
-
 
 <body>
 
   <div class="main-container">
 
+
     <nav class="navbar">
-        <div class="nav-links">
-      <a href="landing.html">Home</a>
-      <a href="index.html">Dashboard</a>
-      <a href="support.html">Contact Us</a>
-  </div>
+
+      <button class="logo">H</button>
+
+      <div class="nav-links">
+        <a href="Landing.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="support.html">Contact Us</a>
+      </div>
+
+      
+
+     
 
     </nav>
 
+    
+
     <section class="hero">
-       <div class="left">
-      <h1>Welcome to HealthBridge</h1>
-      <p>Your gateway to comprehensive healthcare support and information.</p>
-       <button class="start-btn">
-      Get Started
-    </button>
 
-    </div>
+      <div class="left">
 
-  <div class="right">
+        <h1>
+          Connecting Donors, Hospitals & Lives
+        </h1>
 
-    <div class="image-card">
+        <p>
+          Track live blood donation camps, locate nearby hospitals,
+          monitor emergency blood requests, and manage healthcare
+          support through one smart real-time platform.
+        </p>
 
-      <img src="IMAGE">
+        <button class="start-btn">
+          Get Started
+        </button>
 
-    </div>
+      </div>
 
-  </div>
+     
+
+      <div class="right">
+
+        <div class="image-card">
+
+          <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=1974&auto=format&fit=crop" alt="Healthcare">
+
+        </div>
+
+      </div>
+
     </section>
+
+
+    <div class="bottom-buttons">
+
+      <button class="glass-btn">Live Map</button>
+      <button class="glass-btn">Emergency Alerts</button>
+      <button class="glass-btn">Blood Banks</button>
+
+    </div>
 
   </div>
 

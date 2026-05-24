@@ -424,7 +424,7 @@ body{
 
     <div class="nav-links">
       <a href="Landing.html">Home</a>
-      <a href="#">Dashboard</a>
+      <a href="index.html">Dashboard</a>
       <a href="support.html">Contact</a>
     </div>
 
@@ -457,21 +457,20 @@ body{
       </p>
 
       <form class="contact-form">
-
         <div class="input-box">
-          <input type="text" placeholder="Your Name">
+           <input type="text" id="name" placeholder="Your Name">
         </div>
 
         <div class="input-box">
-          <input type="email" placeholder="Email Address">
+            <input type="email" id="email" placeholder="Email Address">
         </div>
 
         <div class="input-box">
-          <input type="text" placeholder="Subject">
+            <input type="text" id="subject" placeholder="Subject">
         </div>
 
         <div class="input-box">
-          <textarea placeholder="Write your message"></textarea>
+            <textarea id="message" placeholder="Write your message"></textarea>
         </div>
 
         <button type="submit" class="submit-btn">
@@ -711,6 +710,10 @@ body{
 
 </div>
 
+
+
+
+
 <script>
 
 const questions = document.querySelectorAll(".faq-question");
@@ -726,6 +729,68 @@ questions.forEach(question => {
   });
 
 });
+
+
+
+const form = document.querySelector(".contact-form");
+
+form.addEventListener("submit", function(event){
+
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+
+  const email = document.getElementById("email").value.trim();
+
+  const subject = document.getElementById("subject").value.trim();
+
+  const message = document.getElementById("message").value.trim();
+
+
+
+  
+  if(name === "" || email === "" || subject === "" || message === ""){
+
+    alert("Please fill all fields");
+
+    return;
+
+  }
+
+
+
+  
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+  if(!email.match(emailPattern)){
+
+    alert("Please enter a valid email address");
+
+    return;
+
+  }
+
+
+
+  
+  console.log("Name:", name);
+  console.log("Email:", email);
+  console.log("Subject:", subject);
+  console.log("Message:", message);
+
+
+
+  
+  alert("Message Submitted Successfully!");
+
+
+
+  
+  form.reset();
+
+});
+
+</script>
 
 </script>
 

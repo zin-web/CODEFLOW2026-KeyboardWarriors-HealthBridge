@@ -54,4 +54,4 @@ def add_resource():
         return jsonify({'error': 'Latitude and Longitude must be valid numbers'}), 400
     
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
